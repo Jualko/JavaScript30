@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="drumkit.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="key" id="a">
+            <p class="letter">A</p>
+            <p class="sound">CLAP</p>
+        </div>
+        <div class="key" id="s">
+            <p class="letter">S</p>
+            <p class="sound">HIHAT</p>
+        </div>
+        <div class="key" id="d">
+            <p class="letter">D</p>
+            <p class="sound">KICK</p>
+        </div>
+        <div class="key" id="f">
+            <p class="letter">F</p>
+            <p class="sound">OPENHAT</p>
+        </div>
+        <div class="key" id="g">
+            <p class="letter">G</p>
+            <p class="sound">BOOM</p>
+        </div>
+        <div class="key" id="h">
+            <p class="letter">H</p>
+            <p class="sound">RIDE</p>
+        </div>
+        <div class="key" id="j">
+            <p class="letter">J</p>
+            <p class="sound">SNARE</p>
+        </div>
+        <div class="key" id="k">
+            <p class="letter">K</p>
+            <p class="sound">TOM</p>
+        </div>
+        <div class="key" id="l">
+            <p class="letter">L</p>
+            <p class="sound">TINK</p>
+        </div>
+    </div>
+
+</body>
+<script>
+    function removeTransition(e) {
+        e.target.classList.remove('playing');
+    }
+
+    //Clicking on the screen keys (divs) - name of sound file depends on actual text in the html element
+    var keys = document.getElementsByClassName("key");
+
+    function getSound() {
+        playSound(this.childNodes[3].innerHTML, this);
+    };
+
+    Array.from(keys).forEach(function (e) {
+        e.addEventListener('click', getSound);
+        e.addEventListener('transitionend', removeTransition);
+    });
+
+
+    //Pressing on the keyboard keys - name of sound file defined in map object
+    var oSoundMap = {
+        a: "clap",
+        s: "hihat",
+        d: "kick",
+        f: "openhat",
+        g: "boom",
+        h: "ride",
+        j: "snare",
+        k: "tom",
+        l: "tink"
+    };
+
+    document.onkeydown = function () {
+        if (oSoundMap[event.key]) playSound(oSoundMap[event.key], document.getElementById(event.key));
+    }
+
+
+    //Plays sound file and animates key
+    function playSound(sound, key) {
+        new Audio("sounds/" + sound + ".wav").play();
+        key.classList.add('playing');
+    }
+</script>
+
+</html>
