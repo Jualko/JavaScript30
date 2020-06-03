@@ -1,0 +1,27 @@
+html {
+font-family: Helvetica;
+background-color: #464e51;
+color: white;
+}
+
+body {
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4.5em;
+}
+
+span {
+    font-size: 3em;
+}
+
+img {
+    margin-top: 3em;
+    height: 35em;
+}
+
+input {
+    width: 8em;
+}
