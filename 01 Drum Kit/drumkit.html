@@ -58,7 +58,7 @@
     var keys = document.getElementsByClassName("key");
 
     function getSound() {
-        playSound(this.childNodes[3].innerHTML, this);
+        playSound(this.childNodes[3].innerHTML.toLowerCase(), this);
     };
 
     Array.from(keys).forEach(function (e) {
