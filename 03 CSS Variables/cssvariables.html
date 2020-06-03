@@ -9,13 +9,39 @@
 </head>
 
 <body>
-        <h1>Update CSS Variables with JS</h1>
-        <span>Spacing:</span> <input type="range" min="0" max="100" value="10">
-        <span>Blur:</span> <input type="range" min="0" max="100" value="10">
-        <span>Base Color:</span> <input type="color" value="#ffc800">
-        <div>
-        <img src="images/adamjensen.jpg">
+    <h1>Update CSS Variables with <span id="js">JS</span></h1>
+    <span>Spacing:</span> <input type="range" min="0" max="100" value="10" id="spacing">
+    <span>Blur:</span> <input type="range" min="0" max="40" value="4" id="blur">
+    <span>Base Color:</span> <input type="color" value="#ffc800" id="color">
+    <div>
+        <img src="images/adamjensen.jpg" id="img">
     </div>
 </body>
+<script>
+    var img = document.getElementById("img"),
+        js = document.getElementById("js");
+
+    img.onload = function () {
+        img.style.border = document.getElementById("spacing").value + "px solid " + document.getElementById("color").value;
+        img.style.filter = "blur(" + document.getElementById("blur").value + "px)";
+        js.style.color = document.getElementById("color").value;
+    }
+
+    //change: triggers when element has finished changing
+    //input: triggers every time after a value is modified
+    document.getElementById("spacing").addEventListener("input", (e) => {
+        console.log("spacing" + e.target.value);
+        img.style.borderWidth = e.target.value + "px";
+    })
+    document.getElementById("blur").addEventListener("input", (e) => {
+        console.log("blur" + e.target.value);
+        img.style.filter = "blur(" + e.target.value + "px)";
+    })
+    document.getElementById("color").addEventListener("input", (e) => {
+        console.log("color" + e.target.value);
+        img.style.borderColor = e.target.value;
+        js.style.color = e.target.value;
+    })
+</script>
 
 </html>

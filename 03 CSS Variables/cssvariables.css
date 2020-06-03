@@ -1,7 +1,7 @@
 html {
-font-family: Helvetica;
-background-color: #464e51;
-color: white;
+    font-family: Helvetica;
+    background-color: #464e51;
+    color: white;
 }
 
 body {
@@ -24,4 +24,8 @@ img {
 
 input {
     width: 8em;
+}
+
+#js {
+    font-size: 1em;
 }
