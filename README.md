@@ -1,6 +1,8 @@
-## JavaScript 30
-### 30 Day Vanilla JS Challenge
+# JavaScript 30 - 30 Day Vanilla JS Challenge
+[Website](https://JavaScript30.com)
 
-https://JavaScript30.com 
+[GitHub](https://github.com/wesbos/JavaScript30)
 
-https://github.com/wesbos/JavaScript30
+## My Solutions
+
+* [01 Drum Kit](https://jualko.github.io/JavaScript30/01%20Drum%20Kit/drumkit.html)
