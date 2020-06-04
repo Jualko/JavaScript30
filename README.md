@@ -8,3 +8,4 @@
 * [01 Drum Kit](https://jualko.github.io/JavaScript30/01%20Drum%20Kit/drumkit.html)
 * [03 CSS Variables](https://jualko.github.io/JavaScript30/03%20CSS%20Variables/cssvariables.html)
 * [05 Flex Panel Gallery](https://jualko.github.io/JavaScript30/05%20Flex%20Panel%20Gallery/flexpanelgallery.html)
+* [06 Type Ahead](https://jualko.github.io/JavaScript30/06%20Type%20Ahead/typeahead.html)
