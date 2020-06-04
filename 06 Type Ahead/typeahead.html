@@ -10,35 +10,70 @@
 
 <body>
     <div class="container">
-        <input type="search" placeholder="Type anything" id="search">
+        <input type="search" placeholder="e.g. Berlin" id="search">
         <div class="list">
             <div class="item">
-                <p>& press [ENTER]!</p>
+                <p>search for any german city</p>
+            </div>
+            <div class="item">
+                <p>& learn about it's population</p>
             </div>
         </div>
     </div>
 </body>
 <script>
-
     //https://github.com/pensnarik/german-cities
-    const dataSource = "germany.json";
+    const endpoint = "https://raw.githubusercontent.com/pensnarik/german-cities/master/germany.json",
+        aData = [];
+
+    //fetch returns a promise, not the data
+    fetch(endpoint)
+        //json(): FETCH API Method that reads a stream and returns a promise that ready the body content as json
+        .then(response => response.json())
+        //... : Spread-Syntax -> expands array instead of putting it into data[0] as a nested array
+        .then(data => aData.push(...data));
+
+    var list = document.getElementsByClassName("list")[0];
+
+    function createItem(p1Text, p2Text) {
+        var div = document.createElement("div"),
+            p1 = document.createElement("p"),
+            p2 = document.createElement("p");
+        div.classList.add("item")
+        div.appendChild(p1);
+        div.appendChild(p2);
+
+        p1.innerText = p1Text;
+        p2.innerText = p2Text || "";
+
+        list.appendChild(div);
+    }
 
     function search() {
-        var value = event.target.value;
+        value = event.target.value;
 
-        var div = document.createElement("div");
-        div.classList.add("item")
+        //deletes all list items
+        while (list.lastChild) {
+            list.removeChild(list.lastChild)
+        }
 
-        var p = document.createElement("p");
-        p.innerText = value
-        div.appendChild(p);
+        if (value == "") {
+            createItem("search for any german city");
+            createItem("& learn about it's population")
+        } else {
+            var aFilteredData = aData.filter(e => e.name.includes(value));
 
-        var list = document.getElementsByClassName("list")[0];
-        list.appendChild(div);
-
-        event.target.value = "";
+            if (!aFilteredData[0]) {
+                createItem("no city found !");
+            } else {
+                aFilteredData.forEach(function (e) {
+                    createItem(e.name, e.population);
+                });
+            }
+        }
     }
-    document.getElementById("search").addEventListener("change", search);
+
+    document.getElementById("search").addEventListener("input", search);
 </script>
 
 </html>

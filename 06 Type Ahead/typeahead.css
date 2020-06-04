@@ -41,10 +41,14 @@ input:focus {
     font-size: 1.2em;
     background-image: url(images/item.jpg);
     background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .item p {
-    margin-left: 1rem;
+    margin: 1rem;
+    display: inline;
 }
 
 .list > :nth-child(odd) {
