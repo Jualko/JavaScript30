@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    color: white;
+    font-family: Helvetica;
+    font-size: 2em;
+}
+
+p {
+    margin: 0.3em;
+    text-shadow: 4px 4px 8px black;
+
+}
+
+.panel {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+}
+
+.panel p:nth-child(2){
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#panel1 {
+    background-color: red;
+    background-image: url(images/panel1.jpg);
+}
+
+#panel2 {
+    background-color: blue;
+    background-image: url(images/panel2.jpg);
+}
+
+#panel3 {
+    background-color: green;
+    background-image: url(images/panel3.jpg);
+}
+
+#panel4 {
+    background-color: yellow;
+    background-image: url(images/panel4.jpg);
+}
+
+#panel5 {
+    background-color: violet;
+    background-image: url(images/panel5.jpg);
+}
