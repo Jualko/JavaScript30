@@ -76,30 +76,31 @@ p {
 }
 
 .panel.open#panel4 {
+    background-color: #716168;
     background-image: url(images/panel4alt.jpg);
 }
 
 #panel1 {
-    background-color: red;
+    background-color: #aa8461;
     background-image: url(images/panel1.jpg);
 }
 
 #panel2 {
-    background-color: blue;
+    background-color: #d9d9d9;
     background-image: url(images/panel2.jpg);
 }
 
 #panel3 {
-    background-color: green;
+    background-color: #b7b2af;
     background-image: url(images/panel3.jpg);
 }
 
 #panel4 {
-    background-color: yellow;
+    background-color: #9ba3bc;
     background-image: url(images/panel4.jpg);
 }
 
 #panel5 {
-    background-color: violet;
+    background-color: #1e1d1d;
     background-image: url(images/panel5.jpg);
 }
