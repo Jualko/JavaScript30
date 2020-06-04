@@ -51,12 +51,16 @@ input:focus {
     display: inline;
 }
 
-.list > :nth-child(odd) {
+.list> :nth-child(odd) {
     transform: perspective(100px) rotateX(-3deg);
 }
 
-.list > :nth-child(even) {
+.list> :nth-child(even) {
     transform: perspective(100px) rotateX(3deg);
     margin-bottom: 3px;
     margin-top: 1px;
+}
+
+.highlighted {
+    background-color: yellow;
 }
