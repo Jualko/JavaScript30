@@ -5,26 +5,68 @@ body {
     font-size: 2em;
 }
 
+.container {
+    display: flex;
+    overflow: hidden;
+}
+
 p {
     margin: 0.3em;
     text-shadow: 4px 4px 8px black;
+    /*adds an animation to the transform -> text slides in / out*/
+    transition: transform 0.5s;
+    /* 
+    flex-grow: how much the iten will grow relative to the other items
+    flex-shrink: how much the item will shrink relative to the other items
+    flex-basis: length of the item
+    (initial: 0 1 auto)
+    */
+    flex: 1 0 auto;
+    /* another nested flex container to center the text*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.panel p:nth-child(2) {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/*puts every first & last p inside of the panels above the screen*/
+
+.panel p:first-child {
+    transform: translateY(-100%);
+}
+
+.panel p:last-child {
+    transform: translateY(100%);
+}
+
+/*puts every first &last p inside of the panels back to it's normal position*/
+
+.panel.open p:first-child {
+    transform: translateY(0);
+}
+
+.panel.open p:last-child {
+    transform: translateY(0);
 }
 
 .panel {
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    height: 20vh;
-    display: flex;
-    flex-direction: column;
     background-position: center;
     background-size: cover;
+    margin: 0;
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.panel p:nth-child(2){
-    font-size: 1.2em;
-    font-weight: bold;
+.panel.open{
+    flex: 2;
 }
 
 #panel1 {

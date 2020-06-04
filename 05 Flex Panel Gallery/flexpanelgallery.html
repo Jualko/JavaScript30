@@ -38,4 +38,22 @@
     </div>
 </body>
 
+<script>
+    function toggle(e) {
+        //currentTarget: element to which the event handler has been attached
+        var divClasses = e.currentTarget.classList;
+
+        if (Array.from(divClasses).indexOf("open") == -1) {
+            divClasses.add("open");
+        } else {
+            divClasses.remove("open");
+        }
+    }
+
+    //ES6: Array.from creates an Array from an array-like / iterable Object
+    Array.from(document.getElementsByClassName("panel")).forEach(e => {
+        e.addEventListener("click", toggle);
+    });
+</script>
+
 </html>
