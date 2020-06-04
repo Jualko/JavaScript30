@@ -1,0 +1,53 @@
+html {
+    background-color: #ca9c62;
+    font-family: Helvetica;
+    background-image: url(images/background.jpg);
+
+}
+
+input {
+    text-align: center;
+    height: 6rem;
+    width: 30rem;
+    margin-top: 8vh;
+    font-size: 3em;
+    border: 10px solid #f7f7f7;
+    border-radius: 5px;
+    box-shadow: lightgray 0px 0px 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item {
+    background-color: white;
+    width: 26rem;
+    height: 3.5rem;
+    box-shadow: lightgray 0px 0px 2px;
+    font-size: 1.2em;
+}
+
+.item p {
+    margin-left: 1rem;
+}
+
+.list :nth-child(odd) {
+    transform: perspective(100px) rotateX(-3deg);
+}
+
+.list :nth-child(even) {
+    transform: perspective(100px) rotateX(3deg);
+    margin-bottom: 3px;
+    margin-top: 1px;
+}
