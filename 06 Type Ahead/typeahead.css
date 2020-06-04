@@ -2,7 +2,6 @@ html {
     background-color: #ca9c62;
     font-family: Helvetica;
     background-image: url(images/background.jpg);
-
 }
 
 input {
@@ -36,6 +35,8 @@ input {
     height: 3.5rem;
     box-shadow: lightgray 0px 0px 2px;
     font-size: 1.2em;
+    background-image: url(images/item.jpg);
+    background-position: center;
 }
 
 .item p {
