@@ -15,6 +15,10 @@ input {
     box-shadow: lightgray 0px 0px 2px;
 }
 
+input:focus {
+    outline-width: 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -43,11 +47,11 @@ input {
     margin-left: 1rem;
 }
 
-.list :nth-child(odd) {
+.list > :nth-child(odd) {
     transform: perspective(100px) rotateX(-3deg);
 }
 
-.list :nth-child(even) {
+.list > :nth-child(even) {
     transform: perspective(100px) rotateX(3deg);
     margin-bottom: 3px;
     margin-top: 1px;

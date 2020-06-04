@@ -10,37 +10,31 @@
 
 <body>
     <div class="container">
-        <input type="search" placeholder="City or State">
+        <input type="search" placeholder="Type anything" id="search">
         <div class="list">
             <div class="item">
-                <p>Filter For a City</p>
-            </div>
-            <div class="item">
-                <p>Or A State</p>
-            </div>
-            <div class="item">
-                <p>WORK IN PROGRESS</p>
-            </div>
-            <div class="item">
-                <p>Landau</p>
-            </div>
-            <div class="item">
-                <p>Sandhausen</p>
-            </div>
-            <div class="item">
-                <p>Mannheim</p>
-            </div>
-            <div class="item">
-                <p>Walldorf</p>
-            </div>
-            <div class="item">
-                <p>Kelsterbach</p>
-            </div>
-            <div class="item">
-                <p>Frankfurt</p>
+                <p>& press [ENTER]!</p>
             </div>
         </div>
     </div>
 </body>
+<script>
+    function search() {
+        var value = event.target.value;
+
+        var div = document.createElement("div");
+        div.classList.add("item")
+
+        var p = document.createElement("p");
+        p.innerText = value
+        div.appendChild(p);
+
+        var list = document.getElementsByClassName("list")[0];
+        list.appendChild(div);
+
+        event.target.value = "";
+    }
+    document.getElementById("search").addEventListener("change", search)
+</script>
 
 </html>
