@@ -62,7 +62,7 @@
             if (!aFilteredData[0]) {
                 list.innerHTML = createItem("no city found !");
             } else {
-                list.innerHTML = aFilteredData.map(e => createItem(e.name, e.population, value, regex)).join("");
+                list.innerHTML = aFilteredData.sort((a, b) => b.population - a.population).map(e => createItem(e.name, e.population, value, regex)).join("");
             }
         }
     }
