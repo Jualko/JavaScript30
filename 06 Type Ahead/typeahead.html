@@ -61,8 +61,10 @@
             createItem("search for any german city");
             createItem("& learn about it's population")
         } else {
-            var aFilteredData = aData.filter(e => e.name.includes(value));
-
+            const regex = new RegExp(value, 'gi');
+            debugger
+            var aFilteredData = aData.filter(e => e.name.match(regex));
+            
             if (!aFilteredData[0]) {
                 createItem("no city found !");
             } else {
