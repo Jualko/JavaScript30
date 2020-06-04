@@ -2,7 +2,8 @@ body {
     margin: 0;
     color: white;
     font-family: Helvetica;
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .container {
@@ -12,9 +13,10 @@ body {
 
 p {
     margin: 0.3em;
-    text-shadow: 4px 4px 8px black;
+    text-shadow: 4px 4px 4px black;
+    -webkit-text-stroke: 2px black;
     /*adds an animation to the transform -> text slides in / out*/
-    transition: transform 0.5s;
+    transition: transform .5s, font-size .5s;
     /* 
     flex-grow: how much the iten will grow relative to the other items
     flex-shrink: how much the item will shrink relative to the other items
@@ -30,7 +32,6 @@ p {
 
 .panel p:nth-child(2) {
     font-size: 1.2em;
-    font-weight: bold;
 }
 
 /*puts every first & last p inside of the panels above the screen*/
@@ -53,6 +54,10 @@ p {
     transform: translateY(0);
 }
 
+.panel.open p:nth-child(2) {
+    font-size: 2em;
+}
+
 .panel {
     background-position: center;
     background-size: cover;
@@ -63,10 +68,11 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: flex .5s;
 }
 
-.panel.open{
-    flex: 2;
+.panel.open {
+    flex: 4;
 }
 
 #panel1 {
