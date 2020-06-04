@@ -35,42 +35,30 @@
 
     var list = document.getElementsByClassName("list")[0];
 
-    function createItem(p1Text, p2Text) {
-        var div = document.createElement("div"),
-            p1 = document.createElement("p"),
-            p2 = document.createElement("p");
-        div.classList.add("item")
-        div.appendChild(p1);
-        div.appendChild(p2);
-
-        p1.innerText = p1Text;
-        p2.innerText = p2Text || "";
-
-        list.appendChild(div);
+    function createItem(p1, p2) {
+        //backticks `` -> template string
+        return `<div class="item"><p>${p1}</p><p>${p2 || ""}</p></div>`
     }
 
     function search() {
-        value = event.target.value;
-
         //deletes all list items
         while (list.lastChild) {
             list.removeChild(list.lastChild)
         }
 
+        var value = event.target.value;
+
         if (value == "") {
             createItem("search for any german city");
-            createItem("& learn about it's population")
+            list.innerHTML = createItem("search for any german city") + createItem("& learn about it's population");
         } else {
             const regex = new RegExp(value, 'gi');
-            debugger
             var aFilteredData = aData.filter(e => e.name.match(regex));
-            
+
             if (!aFilteredData[0]) {
-                createItem("no city found !");
+                list.innerHTML = createItem("no city found !");
             } else {
-                aFilteredData.forEach(function (e) {
-                    createItem(e.name, e.population);
-                });
+                list.innerHTML = aFilteredData.map(e => createItem(e.name, e.population)).join("");
             }
         }
     }
