@@ -68,11 +68,15 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: flex .5s;
+    transition: flex .5s, background-image .5s;
 }
 
 .panel.open {
     flex: 4;
+}
+
+.panel.open#panel4 {
+    background-image: url(images/panel4alt.jpg);
 }
 
 #panel1 {
